@@ -131,8 +131,12 @@
 
             var frDate = year - 1 + "-" + month + "-" + day;
             var toDate = year + "-" + month + "-" + day;
-            $("#frDate").attr("value", frDate);
-            $("#toDate").attr("value", toDate);
+
+            if ($('#frDate').val().length == 0)
+                $('#frDate').val(frDate);
+
+            if ($('#toDate').val().length == 0)
+                $('#toDate').val(toDate);            
         });
         $('#btn-export').on('click', function () {
             $.ajax({
